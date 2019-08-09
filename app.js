@@ -28,8 +28,8 @@ db.once("open", function() {
 
 // Enable CORS
 app.use(function(res, req, next) {
-  req.headers("Allow-Control-Allow-Origin", "*");
-  req.headers("Allow-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Allow-Control-Allow-Origin", "*");
+  res.header("Allow-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   // Grant pre-flight request's permission
   if (req.method === "OPTIONS") {
     res.header("Allow-Control-Allow-Methods", "PUT, POST, DELETE");
